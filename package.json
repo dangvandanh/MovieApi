@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
@@ -10,7 +13,8 @@
     "prisma:dev": "prisma migrate dev --name init",
     "prisma:gen": "prisma generate",
     "seed": "tsx prisma/seed.ts",
-    "lint": "eslint \"src/**/*.ts\" --fix"
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "heroku-postbuild": "npm run prisma:gen && npm run build"
   },
   "dependencies": {
     "@prisma/client": "^5.16.1",
