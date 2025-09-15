@@ -1,4 +1,4 @@
-import { prisma } from "../src/core/prisma";
+import { prisma } from "../src/core/prisma.js";
 
 async function main() {
   const cgv = await prisma.heThongRap.upsert({

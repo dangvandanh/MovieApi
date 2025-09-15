@@ -1,14 +1,14 @@
 import { Router } from "express";
-import authRoute from "./modules/auth/auth.route";
-import userRoute from "./modules/users/user.route";
-import movieRoute from "./modules/movies/movie.route";
-import bannerRoute from "./modules/banners/banner.route";
-import systemRoute from "./modules/systems/system.route";
-import complexRoute from "./modules/complexes/complex.route";
-import cinemaRoute from "./modules/cinemas/cinema.route";
-import seatRoute from "./modules/seats/seat.route";
-import showtimeRoute from "./modules/showtimes/showtime.route";
-import bookingRoute from "./modules/bookings/booking.route";
+import authRoute from "./modules/auth/auth.route.js";
+import userRoute from "./modules/users/user.route.js";
+import movieRoute from "./modules/movies/movie.route.js";
+import bannerRoute from "./modules/banners/banner.route.js";
+import systemRoute from "./modules/systems/system.route.js";
+import complexRoute from "./modules/complexes/complex.route.js";
+import cinemaRoute from "./modules/cinemas/cinema.route.js";
+import seatRoute from "./modules/seats/seat.route.js";
+import showtimeRoute from "./modules/showtimes/showtime.route.js";
+import bookingRoute from "./modules/bookings/booking.route.js";
 
 const r = Router();
 

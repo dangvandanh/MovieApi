@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = () => prisma.heThongRap.findMany({ orderBy: { maHeThongRap: "desc" } });
 export const get = (id: number) => prisma.heThongRap.findUnique({ where: { maHeThongRap: id } });

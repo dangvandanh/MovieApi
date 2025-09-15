@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const create = (data: {
   maRap: number; maPhim: number; ngayGioChieu: Date | string; giaVe: number;

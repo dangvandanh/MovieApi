@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate, authorize } from "../../middlewares/auth.middleware";
-import { getByMovie, getSeats, postShowtime } from "./showtime.controller";
+import { authenticate, authorize } from "../../middlewares/auth.middleware.js";
+import { getByMovie, getSeats, postShowtime } from "./showtime.controller.js";
 
 const r = Router();
 r.post("/", authenticate, authorize("QuanTri"), postShowtime);

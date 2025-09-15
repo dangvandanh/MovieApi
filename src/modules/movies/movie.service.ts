@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = async (q?: { dangChieu?: boolean; sapChieu?: boolean; hot?: boolean }) =>
   prisma.phim.findMany({

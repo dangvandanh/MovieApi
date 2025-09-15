@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import { env } from "../configs/env";
+import { env } from "../configs/env.js";
 
 export type JwtUser = { taiKhoan: number; role: string };
 

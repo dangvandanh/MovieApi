@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = () => prisma.nguoiDung.findMany({ orderBy: { taiKhoan: "desc" } });
 export const get = (id: number) => prisma.nguoiDung.findUnique({ where: { taiKhoan: id } });

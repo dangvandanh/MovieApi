@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { asyncHandler } from "../../core/asyncHandler";
-import * as svc from "./cinema.service";
-import { ok } from "../../core/response";
+import { asyncHandler } from "../../core/asyncHandler.js";
+import * as svc from "./cinema.service.js";
+import { ok } from "../../core/response.js";
 
 export const getAll = asyncHandler(async (_req: Request, res: Response) => ok(res, await svc.list()));
 export const getOne = asyncHandler(async (req: Request, res: Response) => ok(res, await svc.get(+req.params.id)));

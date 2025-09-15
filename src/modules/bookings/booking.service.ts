@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const book = async (payload: {
   taiKhoan: number;

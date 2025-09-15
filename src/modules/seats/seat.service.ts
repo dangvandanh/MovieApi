@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = () => prisma.ghe.findMany({ orderBy: { maGhe: "desc" } });
 export const get = (id: number) => prisma.ghe.findUnique({ where: { maGhe: id } });

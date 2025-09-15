@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = () => prisma.rapPhim.findMany({ orderBy: { maRap: "desc" } });
 export const get = (id: number) => prisma.rapPhim.findUnique({ where: { maRap: id } });

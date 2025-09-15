@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate, authorize } from "../../middlewares/auth.middleware";
-import { deleteOne, getAll, getOne, postOne, putOne } from "./system.controller";
+import { authenticate, authorize } from "../../middlewares/auth.middleware.js";
+import { deleteOne, getAll, getOne, postOne, putOne } from "./system.controller.js";
 
 const r = Router();
 

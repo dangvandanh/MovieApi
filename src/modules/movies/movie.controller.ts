@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { asyncHandler } from "../../core/asyncHandler";
-import * as svc from "./movie.service";
-import { ok } from "../../core/response";
+import { asyncHandler } from "../../core/asyncHandler.js";
+import * as svc from "./movie.service.js";
+import { ok } from "../../core/response.js";
 
 export const getMovies = asyncHandler(async (req: Request, res: Response) => {
   const { dangChieu, sapChieu, hot } = req.query;

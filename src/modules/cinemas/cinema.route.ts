@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authenticate, authorize } from "../../middlewares/auth.middleware";
-import { deleteOne, getAll, getOne, postOne, putOne } from "./cinema.controller";
+import { authenticate, authorize } from "../../middlewares/auth.middleware.js";
+import { deleteOne, getAll, getOne, postOne, putOne } from "./cinema.controller.js";
 
 const r = Router();
 

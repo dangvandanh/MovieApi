@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { asyncHandler } from "../../core/asyncHandler";
-import * as svc from "./auth.service";
-import { ok } from "../../core/response";
+import { asyncHandler } from "../../core/asyncHandler.js";
+import * as svc from "./auth.service.js";
+import { ok } from "../../core/response.js";
 
 export const postRegister = asyncHandler(async (req: Request, res: Response) => {
   const data = await svc.register(req.body);

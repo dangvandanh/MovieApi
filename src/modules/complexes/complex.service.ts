@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 
 export const list = () => prisma.cumRap.findMany({ orderBy: { maCumRap: "desc" } });
 export const get = (id: number) => prisma.cumRap.findUnique({ where: { maCumRap: id } });

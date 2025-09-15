@@ -1,7 +1,7 @@
-import { prisma } from "../../core/prisma";
+import { prisma } from "../../core/prisma.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { env } from "../../configs/env";
+import { env } from "../../configs/env.js";
 
 export const register = async (input: {
   hoTen: string;
