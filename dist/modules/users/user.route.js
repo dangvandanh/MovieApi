@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { authenticate, authorize } from "../../middlewares/auth.middleware.js";
+import { deleteOne, getAll, getOne, postOne, putOne } from "./user.controller.js";
+const r = Router();
+r.get("/", getAll);
+r.get("/:id", getOne);
+r.post("/", authenticate, authorize("QuanTri"), postOne);
+r.put("/:id", authenticate, authorize("QuanTri"), putOne);
+r.delete("/:id", authenticate, authorize("QuanTri"), deleteOne);
+export default r;
