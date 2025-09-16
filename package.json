@@ -7,14 +7,17 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "prisma:dev": "prisma migrate dev --name init",
     "prisma:gen": "prisma generate",
-    "seed": "tsx prisma/seed.ts",
+    "seed": "node prisma/seed.js",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "heroku-postbuild": "npm run prisma:gen && npm run build"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^6.16.1",
