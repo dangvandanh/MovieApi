@@ -1,4 +1,4 @@
-import { prisma } from "../../core/prisma.js";
+import prisma from "../../core/prisma.js";
 
 export const list = () => prisma.banner.findMany({ orderBy: { maBanner: "desc" } });
 export const get = (id: number) => prisma.banner.findUnique({ where: { maBanner: id } });

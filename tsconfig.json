@@ -11,5 +11,5 @@
     "resolveJsonModule": true
   },
   "include": ["src"],           // <— chỉ build src
-  "exclude": ["prisma/seed.ts"] // <— phòng khi include cũ còn cache
+  "exclude": ["prisma/seed.js"] // <— phòng khi include cũ còn cache
 }

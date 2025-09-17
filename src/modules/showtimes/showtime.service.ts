@@ -1,4 +1,5 @@
-import { prisma } from "../../core/prisma.js";
+import prisma from "../../core/prisma.js";
+import type { Ghe } from "@prisma/client";
 
 export const create = (data: {
   maRap: number; maPhim: number; ngayGioChieu: Date | string; giaVe: number;
@@ -9,9 +10,9 @@ export const byMovie = (maPhim: number) =>
     where: { maPhim },
     include: {
       rap: { include: { cumRap: { include: { heThongRap: true } } } },
-      phim: true
+      phim: true,
     },
-    orderBy: { ngayGioChieu: "asc" }
+    orderBy: { ngayGioChieu: "asc" },
   });
 
 export const seatsOfShowtime = async (maLichChieu: number) => {
@@ -19,10 +20,11 @@ export const seatsOfShowtime = async (maLichChieu: number) => {
     where: { maLichChieu },
     include: {
       rap: { include: { gheList: true } },
-      datVes: true
-    }
+      datVes: true,
+    },
   });
   if (!lc) throw new Error("Không tìm thấy lịch chiếu");
-  const bookedSet = new Set(lc.datVes.map(v => v.maGhe));
-  return lc.rap.gheList.map(g => ({ ...g, daDat: bookedSet.has(g.maGhe) }));
+
+  const bookedSet = new Set<number>(lc.datVes.map((v: { maGhe: number }) => v.maGhe));
+  return lc.rap.gheList.map((g: Ghe) => ({ ...g, daDat: bookedSet.has(g.maGhe) }));
 };
